@@ -7,27 +7,29 @@
  */
 public class Customer
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Customer
-     */
-    public Customer()
+    protected Customer()
     {
-        // initialise instance variables
-        x = 0;
+        int id = 0;
+        String nama = null;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public void Customer(int id, String nama)
     {
-        // put your code here
-        return x + y;
+        return;
     }
-}
+    public int getID()
+    {
+        return 0;
+    }
+    public String getNama()
+    {
+    return null;
+    }
+    public void setID(int id)
+    {
+    return;
+    }
+    public void setNama(String nama)
+    {
+    return;
+    }
+    }

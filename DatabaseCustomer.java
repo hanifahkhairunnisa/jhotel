@@ -7,27 +7,21 @@
  */
 public class DatabaseCustomer
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class DatabaseCustomer
-     */
-    public DatabaseCustomer()
+   private DatabaseCustomer()
     {
-        // initialise instance variables
-        x = 0;
+        String[] list_customer = null;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public boolean addCustomer(Customer baru)
     {
-        // put your code here
-        return x + y;
+        return false;
     }
+    public boolean removeCustomer(int id)
+    {
+        return false;
+    }
+    public String[] getCustomerDatabase()
+    {
+        return null;
+    } 
 }

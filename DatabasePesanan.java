@@ -7,27 +7,33 @@
  */
 public class DatabasePesanan
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class DatabasePesanan
-     */
-    public DatabasePesanan()
+    private DatabasePesanan()
     {
-        // initialise instance variables
-        x = 0;
+        String[] list_pesanan = null;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public boolean addPesanan(Pesanan baru)
     {
-        // put your code here
-        return x + y;
+        return false;
     }
+    public boolean removePesanan(Pesanan pesan)
+    {
+        return false;
+    }
+    public Pesanan getPesanan(Customer cust)
+    {
+        return null;
+    }
+    public String[] getPesananDatabase()
+    {
+        return null;
+    }
+    public void pesananDibatalkan(Pesanan pesan)
+    {
+        return;
+    }
+    
+        
+    
+
+
 }

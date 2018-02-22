@@ -7,17 +7,58 @@
  */
 public class Pesanan
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    
+   
     /**
      * Constructor for objects of class Pesanan
      */
     private Pesanan()
     {
-        // initialise instance variables
-        x = 0;
+       double biaya = 0;
+       Customer pelanggan = new Customer ();
+       String nama_pelanggan = null;
+       String jenis_kamar = null;
+       boolean isDiproses = false;
+       boolean isSelesai = false;
     }
+    public void Pesanan() 
+    {
+        return;
+    }
+    public double getBiaya()
+    {
+        return 0;
+    }
+    public Customer getPelanggan()
+    {
+        return null;
+    }
+    public boolean getStatusDiproses()
+    {return false;
+    }
+    public boolean getStatusSelesai()
+    {
+        return false;
+    }
+    public double setBiaya(double biaya)
+    {
+    return 0;
+    }
+    public Customer setPelanggan(Customer baru)
+    { 
+        return null;
+    }
+    public boolean setStatusDiproses(boolean diproses)
+    {
+        return false;
+    }
+    public boolean setStatusSelesai(boolean diproses)
+    { 
+        return false;
+    } 
+            
+
+    
 
     /**
      * An example of a method - replace this comment with your own
@@ -25,9 +66,6 @@ public class Pesanan
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    
+    
 }
