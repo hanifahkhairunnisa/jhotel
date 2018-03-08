@@ -24,7 +24,8 @@ public class DatabaseCustomer
      * @return    the sum of x and y
      */
     /** method untuk menambahk customer */
-    public boolean addCustomer(Customer baru)
+    //public static boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru)
     {
         // put your code here
         return false;

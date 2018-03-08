@@ -14,6 +14,7 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar; 
     
     /**
      * Constructor for objects of class Pesanan
@@ -75,6 +76,13 @@ public class Pesanan
     public void printData()
     {
         System.out.println(biaya);
+    }
+    public void setRoom(Room kamar)
+    {
+    }
+    public Room getRoom()
+    {
+        return kamar;
     }
     
     
