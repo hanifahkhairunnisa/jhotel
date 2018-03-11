@@ -63,7 +63,10 @@ public class Hotel
     /** method untuk mencetak nama */
     public void printData()
     {
-        System.out.println(nama);
+        System.out.println("Hotel");
+        System.out.println("Nama Hotel: " +nama);
+        System.out.println("Lokasi: " +lokasi.getDeskripsi());
+        System.out.println("Bintang: " +bintang);
     }
 
 }

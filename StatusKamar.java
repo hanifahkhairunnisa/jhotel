@@ -9,12 +9,12 @@ public enum StatusKamar
 {
     Booked("Booked"), Processed("Processed"), Vacant("Vacant");
     
-    private String statusKamar;
+    private String status;
     
-    StatusKamar (String statusKamar){
-        this.statusKamar = statusKamar;
+   StatusKamar (String status){
+        this.status = status;
     }
-    public String statusKamar(){
-        return statusKamar;
+    public String toString(){
+        return status;
     }
 }

@@ -7,15 +7,15 @@
  */
 public class DatabaseCustomer
 {
-    private String[] list_customer;
+    private static String[] list_customer;
 
     /**
      * Constructor for objects of class DatabaseCustomer
      */
-    public DatabaseCustomer() 
-    {
+   // public DatabaseCustomer() 
+    //{
       // initialise instance variables
-    }
+   // }
     
     /**
      * Method of class DatabaseCustomer
@@ -31,12 +31,12 @@ public class DatabaseCustomer
         return false;
     }
     /** method untuk menghapus customer */
-    public boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id)
     {
         return false;
     }
    
-    public String[] getCustomerDatabase()
+    public static String[] getCustomerDatabase()
     {
         return null;
     }

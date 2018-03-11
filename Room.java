@@ -2,8 +2,8 @@
 /**
  * Write a description of class Room here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Hanifah Khairunnisa)
+ * @version (10 Maret 2018)
  */
 public class Room
 {
@@ -16,14 +16,21 @@ public class Room
     private double dailyTariff;
     private StatusKamar status_kamar;
     private Pesanan pesan;
+    private double dialytariff;
 
     /**
+     *
      * Constructor for objects of class Room
      */
-    public Room()
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, Customer customer, double dailytariff, StatusKamar status_kamar)
     {
         // initialise instance variables
-        
+        this.hotel = hotel;
+        this.nomor_kamar = nomor_kamar;
+        this.isAvailable = isAvailable;
+        this.customer = customer;
+        dailyTariff = dailytariff;
+        this.status_kamar = status_kamar;
     }
 
     /**
@@ -66,33 +73,46 @@ public class Room
     }
     public void setHotel(Hotel hotel)
     {
-        
+        this.hotel = hotel;
     }
     public void setID(int id)
     {
-       
+       this.id = id;
     }
     public void setNomorKamar(String nomor_kamar)
     {
+        this.nomor_kamar = nomor_kamar;
     }
     public void setStatusAvailable(boolean isAvailable)
     {
+        this.isAvailable = isAvailable;
     }
+   
     public void setCustomer(Customer customer)
     {
+        this.customer = customer;
     }
     public void setDailyTariff(double dailytariff)
     {
+        dailyTariff = dailytariff;
     }
     public void setStatusKamar(StatusKamar status_kamar)
     {
+        this.status_kamar = status_kamar;
     }
     public void setPesanan(Pesanan pesan)
     {
+        this.pesan = pesan;
     }
-    public void printdata()
+    public void printData()
     {
-        System.out.println();
+        //System.out.println();
+        System.out.println("Nama Hotel: " +hotel.getNama());
+        System.out.println("Nomor Kamar: " +nomor_kamar);
+        System.out.println("Status Ketersediaan: " +isAvailable);
+        System.out.println("Pelanggan: " +customer.getNama());
+        System.out.println("Harga: " +dailyTariff);
+        System.out.println("Status Kamar: " +status_kamar);
     }
     
     

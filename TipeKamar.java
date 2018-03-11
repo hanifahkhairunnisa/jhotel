@@ -9,13 +9,13 @@ public enum TipeKamar
 {
     Single("Single"), Double("Double"), Premium("Premium");
     
-    private String tipeKamar;
+    private String tipe;
     
-    TipeKamar(String tipeKamar){
-        this.tipeKamar = tipeKamar;
+    TipeKamar(String tipe){
+        this.tipe = tipe;
     } 
-    public String tipeKamar() {
-        return tipeKamar;
+    public String toString() {
+        return tipe;
     }
 }
 

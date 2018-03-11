@@ -7,14 +7,14 @@
  */
 public class DatabasePesanan
 {
-    private String[] list_pesanan; //lokasi memori telah dipesan
+    private static String[] list_pesanan; //lokasi memori telah dipesan
     /**
      * Constructor for objects of class DatabasePesanan
      */
-    public DatabasePesanan()
-    {
+  //  public DatabasePesanan()
+   // {
         // initialise instance variables
-    }
+    //}
     
     /**
      * Method of class DatabasePesanan
@@ -23,27 +23,27 @@ public class DatabasePesanan
      * @return    the sum of x and y
      */
     /** method untuk menambahkan pesanan */
-    public boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru)
     {
         // put your code here
         return false;
     }
     /** method untuk menghapus pesanan */
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
         return false;
     }
     /** method untuk mengakses pesanan */
-    public Pesanan getPesanan(Customer cust)
+    public static Pesanan getPesanan(Customer cust)
     {
         return null;
     }
     /** method untuk mengakses pesanandatabase */
-    public String[] getPesananDatabase()
+    public static String[] getPesananDatabase()
     {
         return null;
     }
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {
     }
     

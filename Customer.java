@@ -48,6 +48,8 @@ public class Customer
     /** method untuk mencetak nama */
     public void printData()
     {
-        System.out.println(nama);
+        System.out.println("Customer");
+        System.out.println("ID: " +id);
+        System.out.println("Nama pelanggan: " +nama);
     }
 }
