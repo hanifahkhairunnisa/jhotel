@@ -60,13 +60,18 @@ public class Hotel
     {
         this.bintang = bintang;
     }
+    public String toString()
+    {
+        return null;
+    }
+    /*pub
     /** method untuk mencetak nama */
-    public void printData()
+    /*public void printData()
     {
         System.out.println("Hotel");
         System.out.println("Nama Hotel: " +nama);
         System.out.println("Lokasi: " +lokasi.getDeskripsi());
         System.out.println("Bintang: " +bintang);
-    }
+    }*/
 
 }

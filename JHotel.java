@@ -5,15 +5,14 @@
  * @author (Hanifah Khairunnisa)
  * @version (a version number or a date)
  */
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 public class JHotel
 {
     /**
      * Constructor for objects of class Pesanan
      */
-   // public JHotel()
-    //{
-        
-    //}
+    
     public static void main(String [] args)
     {
         // put your code here
@@ -65,7 +64,7 @@ public class JHotel
         Administrasi.pesananSelesai(pesanan1);
         room1.printData();
         pesanan1.printData();*/
-        Lokasi lokasi1 = new Lokasi (5, 5, "Depok");
+        /*Lokasi lokasi1 = new Lokasi (5, 5, "Depok");
         Hotel hotel1 = new Hotel("Hotel B Aja", lokasi1, 3);
         Room room1 = new SingleRoom(hotel1, "666", true, StatusKamar.Booked);
         Customer customer1 = new Customer(23, "Mimi per");
@@ -111,7 +110,22 @@ public class JHotel
         {
             System.out.println("Salah, bukan double room");
             
-        }
+        }*/
+        Customer customer1 = new Customer(1, "Hanifah", 21, 2, 1997);
+        Customer customer2 = new Customer (2, "Winny", 6, 6, 1997);
+        Customer customer3 = new Customer(3, "Ramdha", 30, 1, 1998);
+        
+        customer1.setEmail("e.t.d@");
+        customer1.printData();
+        customer2.setEmail("Ee_.td@ui.ac.id");
+        customer2.printData();
+        customer3.setEmail("HanifahKhairunnisa.modul5@netlab.com");
+        customer3.printData();
+        Customer cust1 = new Customer(1, "Hani", new GregorianCalendar(2018, 03, 22).getTime()); 
+    }
+    public JHotel()
+    {
+        
     }
     
 }

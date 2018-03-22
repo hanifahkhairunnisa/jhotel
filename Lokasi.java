@@ -60,11 +60,15 @@ public class Lokasi
         deskripsiLokasi = deskripsi;
     }
     /** method untuk mencetak deskripsiLokasi ke layar */
-    public void printData()
+    public String toString()
+    {
+        return null;
+    }
+    /*public void printData()
     {
         System.out.println("Lokasi");
         System.out.println("Koordinat X: " +x_coord);
         System.out.println("Koordinat Y: " +y_coord);
         System.out.println("Deskripsi: " +deskripsiLokasi);
-    }
+    }*/
 }

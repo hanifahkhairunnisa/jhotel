@@ -5,8 +5,10 @@
  * @author (Hanifah KHairunnisa)
  * @version (1 Maret 2018)
  */
+import java.util.Date;
 public class Pesanan
 {
+     
     // instance variable
     private double biaya;
     private double jumlahHari;
@@ -14,6 +16,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar; 
+    private Date tanggalPesan;
     
     /**
      * Constructor for objects of class Pesanan
@@ -58,6 +61,11 @@ public class Pesanan
     {
         return kamar;
     }
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
+    
     /** method untuk mengakses Biaya */
     public void setBiaya()
     {
@@ -90,7 +98,15 @@ public class Pesanan
         this.kamar = kamar;
     }
     /** method untuk mencetak biaya ke layar */
-    public void printData()
+    public void setTanggalPesan(Date tanggalPesan)
+    {
+        
+    }
+    public String toString()
+    {
+        return null;
+    }
+    /*public void printData()
     {
         System.out.println("Pesanan");
         System.out.println("Jumlah hari: " +jumlahHari);
@@ -98,7 +114,7 @@ public class Pesanan
         System.out.println("Status layanan diproses: " +isDiproses);
         System.out.println("Status layanan selesai: " +isSelesai);
         System.out.println("Nama pelanggan: " +pelanggan.getNama());
-    }
+    }*/
     
     
     
