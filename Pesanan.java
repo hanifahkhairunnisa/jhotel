@@ -6,6 +6,7 @@
  * @version (1 Maret 2018)
  */
 import java.util.Date;
+import java.util.GregorianCalendar;
 public class Pesanan
 {
      
@@ -21,14 +22,23 @@ public class Pesanan
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int hari, int tahun, int bulan)
     {
        //assign instance variables
        this.jumlahHari = jumlahHari;
        this.pelanggan = pelanggan;
        this.kamar = kamar;
        biaya = kamar.getDailyTariff()*jumlahHari;
+       GregorianCalendar gc = new GregorianCalendar(tahun, bulan, hari);
     }
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
+    {
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        this.tanggalPesan = tanggalPesan;
+    }
+    
     
     /**
      * Method of class Pesanan
@@ -104,17 +114,8 @@ public class Pesanan
     }
     public String toString()
     {
-        return null;
+        return "\nPesanan\nNama Pelanggan:\t" +pelanggan.getNama()+ "Jumlah hari\t:" +jumlahHari+ "Biaya\t:"+biaya+"Status layanan diproses\t:" +isDiproses+"Status layanan selesai\t:" +isSelesai;
     }
-    /*public void printData()
-    {
-        System.out.println("Pesanan");
-        System.out.println("Jumlah hari: " +jumlahHari);
-        System.out.println("Biaya: " +biaya);
-        System.out.println("Status layanan diproses: " +isDiproses);
-        System.out.println("Status layanan selesai: " +isSelesai);
-        System.out.println("Nama pelanggan: " +pelanggan.getNama());
-    }*/
     
     
     

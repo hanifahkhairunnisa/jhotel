@@ -62,7 +62,7 @@ public class Hotel
     }
     public String toString()
     {
-        return null;
+        return "Hotel\n Nama hotel\t:" +nama+ "\nLokasi\t:" +lokasi.getDeskripsi()+ "\nBintang\t:" +bintang;
     }
     /*pub
     /** method untuk mencetak nama */
