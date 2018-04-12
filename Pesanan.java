@@ -11,9 +11,11 @@ public class Pesanan
 {
      
     // instance variable
+    private int id;
     private double biaya;
     private double jumlahHari;
     private Customer pelanggan;
+    private boolean isAktif;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar; 
@@ -22,22 +24,16 @@ public class Pesanan
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int hari, int tahun, int bulan)
+    public Pesanan(double jumlahHari, Customer pelanggan)
     {
        //assign instance variables
        this.jumlahHari = jumlahHari;
        this.pelanggan = pelanggan;
-       this.kamar = kamar;
-       biaya = kamar.getDailyTariff()*jumlahHari;
-       GregorianCalendar gc = new GregorianCalendar(tahun, bulan, hari);
+       isAktif = true;
+       tanggalPesan = new Date();
+       
     }
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
-    {
-        this.jumlahHari = jumlahHari;
-        this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        this.tanggalPesan = tanggalPesan;
-    }
+    
     
     
     /**
@@ -47,10 +43,18 @@ public class Pesanan
      * @return    the sum of x and y
      */
     /** method untuk mengakses biaya */
+    public int getID(){
+        return id;
+    }
+    
     public double getBiaya() 
     {
         return biaya;
     }
+    public double getJumlahHari(){
+        return jumlahHari;
+    }
+    
     public Customer getPelanggan()
     {
         return pelanggan;
@@ -58,9 +62,9 @@ public class Pesanan
     /** method untuk mengakses pelanggan*/
     
     /** method untuk mengakses StatusDiproses*/
-    public boolean getStatusDiproses()
+    public boolean getStatusAktif()
     {
-        return isDiproses;
+        return isAktif;
     }
     /** method untuk mengakses StatusSelesai*/
     public boolean getStatusSelesai()
@@ -77,9 +81,12 @@ public class Pesanan
     }
     
     /** method untuk mengakses Biaya */
+    public void setID(int id){
+        this.id = id;
+    }
     public void setBiaya()
     {
-        biaya = kamar.getDailyTariff()*jumlahHari;
+        
     }
     public void setJumlahHari(double jumlahHari)
     {
@@ -94,15 +101,19 @@ public class Pesanan
     
     
     /** method untuk memperbaharui Pelanggan */
-    public void setStatusDiproses(boolean diproses)
+    public void setStatusAktif(boolean aktif)
     {
-       isDiproses = diproses;
+       isAktif = aktif;
     }
     /** method untuk memperbaharui StatusSelesai */
-    public void setStatusSelesai(boolean selesai)
+    public void setStatusDiproses(boolean diproses)
     { 
-        isSelesai = selesai;
+        isDiproses = diproses;
     } 
+    public void setStatusSelesai (boolean selesai){
+        isSelesai = selesai;
+    }
+    
     public void setRoom(Room kamar)
     {
         this.kamar = kamar;

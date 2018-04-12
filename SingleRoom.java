@@ -17,7 +17,7 @@ public class SingleRoom extends Room
     
     {
         // initialise instance variables
-        super (hotel, nomor_kamar, isAvailable, status_kamar);
+        super (hotel, nomor_kamar, status_kamar);
         
     }
 

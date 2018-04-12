@@ -54,9 +54,12 @@ public class Customer
     {
         return email;
     }
-    public Date getDOB(Date dob)
+    public Date getDOB()
     {
-        return this.dob = dob;
+        
+        //System.out.printf("%1$s %2$td %2$tB %2$tY", "DOB:", dob);
+        System.out.println(dob.toString());
+        return dob;
     }
     
     /** method untuk memperbaharui id */
@@ -88,17 +91,23 @@ public class Customer
     
     public String toString()
     {
-        return null;
+        return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob;
+    /*    if(DatabasePesanan.getPesanan(Customer)){
+        return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob;
     }
+    else{
+        return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob;
+    }*
+   }
     /*pub
     
     /** method untuk mencetak nama */
-    public void printData()
+    /*public void printData()
     {
         System.out.println("Customer");
         System.out.println("ID: " +id);
         System.out.println("Nama pelanggan: " +nama);
         System.out.println(email);
-    }
+    }*/}
 }
 
