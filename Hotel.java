@@ -8,6 +8,7 @@
 public class Hotel
 {
     // instance variables - replace the example below with your own
+    private int id;
     private String nama;
     private Lokasi lokasi;
     private int bintang;
@@ -21,7 +22,7 @@ public class Hotel
         this.nama = nama; //menggunakan this karena nama variabel sama dg nama parameter
         this.lokasi = lokasi;
         this.bintang = bintang;
-        
+        this.id = DatabaseHotel.getLastHotelID()+1;
     }
 
     /**
@@ -31,6 +32,10 @@ public class Hotel
      * @return    the sum of x and y
      */
     /** method untuk mengakses Bintang */
+    public int getID()
+    {
+        return id;
+    }
     public int getBintang()
     {
         return bintang;
@@ -44,6 +49,10 @@ public class Hotel
     public Lokasi getLokasi()
     { 
         return lokasi;
+    }
+    public void setID(int id)
+    {
+        this.id = id;
     }
     /** method untuk memperbaharui Nama */
     public void setNama(String nama)
@@ -62,16 +71,7 @@ public class Hotel
     }
     public String toString()
     {
-        return "Hotel\n Nama hotel\t:" +nama+ "\nLokasi\t:" +lokasi.getDeskripsi()+ "\nBintang\t:" +bintang;
+        return "Hotel\n Nama hotel\t:" +getNama()+ "\nLokasi\t:" +getLokasi().getDeskripsi()+ "\nBintang\t:" +getBintang();
     }
-    /*pub
-    /** method untuk mencetak nama */
-    /*public void printData()
-    {
-        System.out.println("Hotel");
-        System.out.println("Nama Hotel: " +nama);
-        System.out.println("Lokasi: " +lokasi.getDeskripsi());
-        System.out.println("Bintang: " +bintang);
-    }*/
-
+    
 }

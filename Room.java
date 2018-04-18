@@ -12,7 +12,7 @@ public abstract class Room
     private String nomor_kamar;
     private StatusKamar status_kamar;
     protected double dailyTariff;
-    private Pesanan pesan;
+    
    
 
     /**
@@ -52,11 +52,7 @@ public abstract class Room
     }
     
     public abstract TipeKamar getTipeKamar();
-    public Pesanan getPesanan(){
-        return pesan;}
-    public void setPesanan(Pesanan pesan){
-        this.pesan =pesan;}
-        
+    
     public void setHotel(Hotel hotel)
     {
         this.hotel = hotel;
@@ -66,9 +62,6 @@ public abstract class Room
     {
         this.nomor_kamar = nomor_kamar;
     }
-    
-   
-    
     public void setDailyTariff(double dailytariff)
     {
         dailyTariff = dailytariff;
@@ -80,13 +73,15 @@ public abstract class Room
     
     public String toString()
     {
-        /*if(getStatusAvailable() == true)
+            if(DatabasePesanan.getPesanan(this) == null)
         {
-             return "Nama Hotel:" + hotel.getNama()+"\nTipe Kamar" +
-            getTipeKamar() +"\nHarga" +dailyTariff+"\nStatus Kamar" +
-            status_kamar;
-        }*/
-        //else
+            return "\nNama Hotel \t\t:" + getHotel().getNama()
+                    + "\nTipe Kamar \t\t:" + getTipeKamar()
+                    + "\nHarga \t\t:" + getDailyTariff()
+                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString();
+        }
+        else
+        {
         
             return "Nama Hotel:" + hotel.getNama()+"\nTipe Kamar" +
             getTipeKamar() +"\nHarga" +dailyTariff+"\nStatus Kamar" +
@@ -95,6 +90,7 @@ public abstract class Room
         }
         
     }
+}
     
     
 

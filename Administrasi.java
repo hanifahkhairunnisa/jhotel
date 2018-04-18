@@ -30,37 +30,43 @@ public class Administrasi
         pesan.setStatusDiproses(true);
         pesan.setStatusSelesai(false);
         pesan.setRoom(kamar);
+        DatabaseRoom.getRoom(kamar.getHotel(),kamar.getNomorKamar()).setStatusKamar(StatusKamar.BOOKED);
             
     }
     public static void pesananDibatalkan(Room kamar){
-        kamar.getPesanan().setStatusSelesai(false);
-        kamar.getPesanan().setStatusDiproses(false);
-        kamar.setPesanan(null);
-        //roomLepasPesanan(kamar);
-    }
-    public static void pesananSelesai(Room kamar){
-        Pesanan pesan = kamar.getPesanan();
-        pesan.setStatusSelesai(true);
-        pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
-        pesan.setStatusAktif(false);
-    }
-    public static void pesananDibatalkan(Pesanan pesan)
-    { 
-        Room kamar = pesan.getRoom();
-        pesan.setStatusSelesai(true);
-        pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
-        pesan.setStatusAktif(false);
-        
-    }
-    public static void pesananSelesai(Pesanan pesan)
-    {
-        Room kamar = pesan.getRoom();
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        if(pesan != null){
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setRoom(null);
+        //roomLepasPesanan(kamar);
+    }
+    DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
+    }
+    public static void pesananSelesai(Room kamar){
+    Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        if(pesan != null) {
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
+        DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
+    }
+    }
+    public static void pesananDibatalkan(Pesanan pesan)
+    { 
+      DatabaseRoom.getRoom(pesan.getRoom().getHotel(),pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.VACANT);  
+      pesan.setStatusSelesai(false);  
+      pesan.setStatusDiproses(false);
+      pesan.setStatusAktif(false);
+      pesan.setRoom(null);
+    }
+    public static void pesananSelesai(Pesanan pesan)
+    {
+        DatabaseRoom.getRoom(pesan.getRoom().getHotel(),pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
+        pesan.setRoom(null); 
     }
     
     

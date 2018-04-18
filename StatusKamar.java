@@ -7,7 +7,7 @@
  */
 public enum StatusKamar
 {
-    Booked("Booked"), Processed("Processed"), Vacant("Vacant");
+    BOOKED("Booked"), PROCESSED("Processed"), VACANT("Vacant");
     
     private String status;
     

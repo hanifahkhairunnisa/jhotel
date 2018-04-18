@@ -9,7 +9,7 @@ public class DoubleRoom extends Room
 {
     // instance variables - replace the example below with your own
     private Customer customer2;
-    private static TipeKamar TIPE_KAMAR = TipeKamar.Double;
+    private static TipeKamar TIPE_KAMAR = TipeKamar.DOUBLE;
 
     /**
      * Constructor for objects of class DoubleRoom
@@ -26,15 +26,16 @@ public class DoubleRoom extends Room
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
+    public TipeKamar getTipeKamar()
+    {
+        return TIPE_KAMAR;
+    }
     public Customer getCustomer2()
     {
         // put your code here
         return customer2;
     }
-    public TipeKamar getTipeKamar()
-    {
-        return TIPE_KAMAR;
-    }
+    
     
     public void setCustomer2(Customer customer2)
     {

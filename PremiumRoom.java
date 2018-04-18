@@ -8,13 +8,13 @@
 public class PremiumRoom extends Room
 {
     // instance variables - replace the example below with your own
-    private static double DISCOUNT;
-    private static TipeKamar TIPE_KAMAR = TipeKamar.Premium;
+    private static double DISCOUNT=0.3;
+    private static TipeKamar TIPE_KAMAR = TipeKamar.DOUBLE;
 
     /**
      * Constructor for objects of class PremiumRoom
      */
-    public PremiumRoom(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
+    public PremiumRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
     {
         // initialise instance variables
         super (hotel, nomor_kamar, status_kamar);
@@ -31,10 +31,7 @@ public class PremiumRoom extends Room
         // put your code here
         return TIPE_KAMAR;
     }
-    public double getDiscount()
-    {
-        return DISCOUNT;
-    }
+    
     
     public void setDailyTariff(double dailytariff)
     {

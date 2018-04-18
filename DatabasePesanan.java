@@ -8,16 +8,9 @@
 import java.util.ArrayList;
 public class DatabasePesanan
 {
-    private static ArrayList<Pesanan> PESANAN_DATABASE; //lokasi memori telah dipesan
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<>(); //lokasi memori telah dipesan
     private static int LAST_PESANAN_ID = 0;
-    /**
-     * Constructor for objects of class DatabasePesanan
-     */
-  public DatabasePesanan()
-   {
-       
-       // initialise instance variables
-   }
+  
    
     
     /**
@@ -27,72 +20,66 @@ public class DatabasePesanan
      * @return    the sum of x and y
      */
     /** method untuk menambahkan pesanan */
-    
-    public static ArrayList<Pesanan> getPesanan()
-    {
-        return null;
-    }
+   public static ArrayList<Pesanan> getPesananDatabase(){
+        return PESANAN_DATABASE;
+  }
     public static int getLastPesananID(){
         return LAST_PESANAN_ID;
     }
     public static boolean addPesanan(Pesanan baru)
     {
         // put your code here
-        if(baru.getStatusAktif()==true){
+        if(getPesananAktif(baru.getPelanggan()) == null){
+            PESANAN_DATABASE.add(baru);
+            LAST_PESANAN_ID = baru.getID();
+            return true;
+        }
+        else {
             return false;
-    }
-    else{
-        PESANAN_DATABASE.add(baru);
-        return true;
-    }
+        }
     }
     
-   public static Pesanan getPesanan (int id){
+    public static Pesanan getPesanan (int id){
        for(Pesanan pesan : PESANAN_DATABASE){
-            if(pesan.getID()==id){
+             if(pesan.getID()==id){
                 return pesan;
+             }
+        }
+       return null;
     }
-    
-    }
-    return null;
-}
     public static Pesanan getPesanan(Room kamar){
-               for(Pesanan pesan : PESANAN_DATABASE){
-            if(pesan.getRoom()==kamar){
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if(kamar.equals(pesan.getRoom())==true){
                 return pesan;
-    }
-    
-    }
-    return null;
-    }
+            }
+        }
+        return null;
+       }
     public static Pesanan getPesananAktif(Customer pelanggan){
-           for(Pesanan pesan : PESANAN_DATABASE){
-            if(pesan.getPelanggan()==pelanggan){
-                if(pesan.getStatusAktif()==true){
-                    
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if (pesan.getStatusAktif() == true && pesan.getPelanggan().equals(pelanggan) == true){
                 return pesan;
-    }
+            }
+        }
+        return null;
     }
     
-    }
-    return null;
-    }
-    public static Pesanan removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {     
         for(Pesanan pesandb : PESANAN_DATABASE){
             if(pesandb == pesan){
-                if(pesan.getRoom()!=null){
-                pesan.setStatusAktif(false);    
+                if(pesan.equals(pesandb)){
+                if(pesan.getRoom() != null) Administrasi.pesananDibatalkan(pesan);
+                else if(pesan.getStatusAktif() == true) pesan.setStatusAktif(false);
                 PESANAN_DATABASE.remove(pesandb);
-                return true;}}
-                else if (pesan.getRoom()==null){
-                    if(pesan.getStatusAktif()==true){
-                        pesan.setStatusAktif(false);
-                        PESANAN_DATABASE.remove(pesandb);
-                        return true;
-                    }}
-    }
-    return null;
+                return true;
+                    }
+                }
+                    
+        }
+       return false;
     }
     
     }

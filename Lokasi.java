@@ -62,7 +62,7 @@ public class Lokasi
     /** method untuk mencetak deskripsiLokasi ke layar */
     public String toString()
     {
-        return "Lokasi\n Koordinat x\t:" +x_coord+ "\nKoordinat y\t:" +y_coord+ "\nDeskripsi\t:" +deskripsiLokasi;
+        return "Lokasi\n Koordinat x\t:" +getX()+ "\nKoordinat y\t:" +getY()+ "\nDeskripsi\t:" +getDeskripsi();
     }
     /*public void printData()
     {

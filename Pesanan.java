@@ -5,12 +5,11 @@
  * @author (Hanifah KHairunnisa)
  * @version (1 Maret 2018)
  */
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
 public class Pesanan
 {
      
-    // instance variable
+    //variable yang digunakan
     private int id;
     private double biaya;
     private double jumlahHari;
@@ -22,114 +21,117 @@ public class Pesanan
     private Date tanggalPesan;
     
     /**
-     * Constructor for objects of class Pesanan
+     * Constructor kelas Pesanan
      */
     public Pesanan(double jumlahHari, Customer pelanggan)
     {
-       //assign instance variables
-       this.jumlahHari = jumlahHari;
-       this.pelanggan = pelanggan;
-       isAktif = true;
-       tanggalPesan = new Date();
-       
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        this.biaya = kamar.getDailyTariff()*jumlahHari;
+        this.isAktif = true;
+        this.tanggalPesan = new Date();
+        this.id = DatabasePesanan.getLastPesananID()+1;
     }
-    
-    
-    
     /**
      * Method of class Pesanan
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    /** method untuk mengakses biaya */
+    /** method untuk mendapatkan ID */
     public int getID(){
-        return id;
+         return id;
     }
-    
+    /** method untuk mendapatkan biaya */
     public double getBiaya() 
     {
-        return biaya;
+         return biaya;
     }
     public double getJumlahHari(){
         return jumlahHari;
     }
-    
+    /** method untuk mendapatkan pelanggan */
     public Customer getPelanggan()
     {
         return pelanggan;
     }
-    /** method untuk mengakses pelanggan*/
-    
-    /** method untuk mengakses StatusDiproses*/
+    /** method untuk mendapatkan status diproses*/
+    public boolean getStatusDiproses(){
+        return isDiproses;
+    }
+    /** method untuk mendapatkan status aktif*/
     public boolean getStatusAktif()
     {
         return isAktif;
     }
-    /** method untuk mengakses StatusSelesai*/
+    /** method untuk mendapatkan status selesai*/
     public boolean getStatusSelesai()
     {
         return isSelesai;
     }
+    /** method untuk mendapatkan room*/
     public Room getRoom()
     {
         return kamar;
     }
+    /** method untuk mendapatkan Date*/
     public Date getTanggalPesan()
     {
         return tanggalPesan;
     }
-    
-    /** method untuk mengakses Biaya */
+    /** mutator id */
     public void setID(int id){
         this.id = id;
     }
+    /** mutator biaya*/
     public void setBiaya()
     {
-        
+        this.biaya = kamar.getDailyTariff()*jumlahHari;
     }
+    /** mutator jumlah hari */
     public void setJumlahHari(double jumlahHari)
     {
        this.jumlahHari = jumlahHari;
     }
     
-    /** method untuk memperbaharui Pelanggan */
-    public void setPelanggan(Customer pelanggan)
+    /** mutator baru */
+    public void setPelanggan(Customer baru)
     { 
-        this.pelanggan = pelanggan;
+       pelanggan = baru;
     }
     
-    
-    /** method untuk memperbaharui Pelanggan */
+    /** mutator aktif */
     public void setStatusAktif(boolean aktif)
     {
        isAktif = aktif;
     }
-    /** method untuk memperbaharui StatusSelesai */
+    /** mutator diproses  */
     public void setStatusDiproses(boolean diproses)
     { 
         isDiproses = diproses;
     } 
+    /** mutator selesai*/
     public void setStatusSelesai (boolean selesai){
         isSelesai = selesai;
     }
-    
+    /** mutator kamar */
     public void setRoom(Room kamar)
     {
         this.kamar = kamar;
     }
-    /** method untuk mencetak biaya ke layar */
+    /** mutator tanggalPesan */
     public void setTanggalPesan(Date tanggalPesan)
     {
-        
+        this.tanggalPesan = tanggalPesan;
     }
+    /** method untuk print data*/
     public String toString()
     {
+        String final_status = "KOSONG";
+        if(isDiproses == true && isSelesai == false) final_status = "DIPROSES";
+        else if(isDiproses == false && isSelesai == false) final_status = "KOSONG";
+        else if(isDiproses == false && isSelesai == true) final_status = "SELESAI";
         return "\nPesanan\nNama Pelanggan:\t" +pelanggan.getNama()+ "Jumlah hari\t:" +jumlahHari+ "Biaya\t:"+biaya+"Status layanan diproses\t:" +isDiproses+"Status layanan selesai\t:" +isSelesai;
     }
-    
-    
-    
-    
-    
 }

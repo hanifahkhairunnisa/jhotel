@@ -8,12 +8,12 @@
 public class SingleRoom extends Room
 {
     // instance variables - replace the example below with your own
-    private static TipeKamar TIPE_KAMAR =TipeKamar.Single;
+    private static TipeKamar TIPE_KAMAR =TipeKamar.SINGLE;
 
     /**
      * Constructor for objects of class SingleRoom
      */
-    public SingleRoom(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
+    public SingleRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
     
     {
         // initialise instance variables

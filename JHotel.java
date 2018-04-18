@@ -5,8 +5,7 @@
  * @author (Hanifah Khairunnisa)
  * @version (a version number or a date)
  */
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.*;
 public class JHotel
 {
     /**
@@ -111,7 +110,7 @@ public class JHotel
             System.out.println("Salah, bukan double room");
             
         }*/
-        Customer customer1 = new Customer(1, "Hanifah", 21, 2, 1997);
+        /*Customer customer1 = new Customer(1, "Hanifah", 21, 2, 1997);
         Customer customer2 = new Customer (2, "Winny", 6, 6, 1997);
         Customer customer3 = new Customer(3, "Ramdha", 30, 1, 1998);
         
@@ -121,7 +120,7 @@ public class JHotel
         customer2.printData();
         customer3.setEmail("HanifahKhairunnisa.modul5@netlab.com");
         customer3.printData();
-        Customer cust1 = new Customer(1, "Hani", new GregorianCalendar(2018, 03, 22).getTime()); 
+        Customer cust1 = new Customer(1, "Hani", new GregorianCalendar(2018, 03, 22).getTime()); */
     }
     public JHotel()
     {

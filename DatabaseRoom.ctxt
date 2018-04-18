@@ -1,11 +1,16 @@
 #BlueJ class context
 comment0.target=DatabaseRoom
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseRoom\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=baru
-comment1.target=boolean\ addRoom(Customer)
+comment1.params=
+comment1.target=java.util.ArrayList\ getRoomDatbabse()
 comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
-comment2.params=id
-comment2.target=boolean\ removeRoom(int)
-comment3.params=
-comment3.target=java.lang.String[]\ getRoomDatabase()
-numComments=4
+comment2.params=baru
+comment2.target=boolean\ addRoom(Room)
+comment3.params=hotel\ nomor_kamar
+comment3.target=Room\ getRoom(Hotel,\ java.lang.String)
+comment4.params=hotel
+comment4.target=java.util.ArrayList\ getRoomsFromHotel(Hotel)
+comment5.params=
+comment5.target=java.util.ArrayList\ getVacantRooms()
+comment6.params=hotel\ nomor_kamar
+comment6.target=boolean\ removeRoom(Hotel,\ java.lang.String)
+numComments=7
