@@ -28,34 +28,38 @@ public class DatabaseHotel
     public static int getLastHotelID() {
         return LAST_HOTEL_ID;
     }
-    
-    public static boolean addHotel(Hotel baru)
-    {
+
+    public static boolean addHotel(Hotel baru) throws HotelSudahAdaException{
         for (Hotel hotel :
                 HOTEL_DATABASE) {
-            if(hotel.getID() == baru.getID()) return false;
-            else if(hotel.getLokasi()==baru.getLokasi()) return false;
+            if(hotel.getID() == baru.getID() || (hotel.getLokasi().equals(baru.getLokasi()) && hotel.getNama().compareTo(baru.getNama())==0)){
+                throw new HotelSudahAdaException(hotel);
+            }
         }
-
         HOTEL_DATABASE.add(baru);
         LAST_HOTEL_ID = baru.getID();
         return true;
     }
-  /*  public static boolean removeHotel(int id)
-    {
+
+    public static boolean removeHotel(int id) throws HotelTidakDitemukanException {
         for (Hotel hotel :
                 HOTEL_DATABASE) {
             if(hotel.getID()==id){
                 for (Room kamar :
                         DatabaseRoom.getRoomsFromHotel(hotel)) {
-                    DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                    try{
+                        DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                    }
+                    catch(RoomTidakDitemukanException e){
+                            e.getPesan();
+                    }
                 }
                 HOTEL_DATABASE.remove(hotel);
                 return true;
             }
         }
-        return false;
-    }*/
+        throw new HotelTidakDitemukanException(id);
+    }
     public static Hotel getHotel(int id)
     {
         for (Hotel hotel :

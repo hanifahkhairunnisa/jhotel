@@ -6,7 +6,7 @@ public class PesananSudahAdaException extends Exception{
         pesanan_error=pesanan_input;
     }
     public String getPesan(){
-        return super.getMessage() + pesanan_error.getPelanggan().getNama() + "sudah melakukan pemesanan.";
+        return super.getMessage() + pesanan_error.getPelanggan().getNama() + " sudah melakukan pemesanan.";
     }
 
 }

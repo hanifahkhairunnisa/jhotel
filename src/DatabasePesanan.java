@@ -65,23 +65,19 @@ public class DatabasePesanan
         }
         return null;
     }
-    
-    /*public static boolean removePesanan(Customer pelanggan) throws PesananTidakDitemukanException
-    {     
-        for(Pesanan pesandb : PESANAN_DATABASE){
-            if(pesandb == pesan){
-                if(pesan.equals(pesandb)){
+
+    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException{
+        for (Pesanan pesan2 :
+                PESANAN_DATABASE) {
+            if(pesan.equals(pesan2)){
                 if(pesan.getRoom() != null) Administrasi.pesananDibatalkan(pesan);
                 else if(pesan.getStatusAktif() == true) pesan.setStatusAktif(false);
-                PESANAN_DATABASE.remove(pesandb);
+                PESANAN_DATABASE.remove(pesan2);
                 return true;
-                    }
-                }
-                    
+            }
         }
-       throw new PesananTidakDitemukanException();
-    }*/
-    
+        throw new PesananTidakDitemukanException(pesan.getPelanggan());
+    }
     }
     
    

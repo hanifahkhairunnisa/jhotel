@@ -6,7 +6,7 @@ public class PesananTidakDitemukanException extends Exception {
         this.pelanggan_error = pelanggan_input;
     }
     public String getPesan(){
-        return super.getMessage() + pelanggan_error.getNama() + "tidak ditemukan.";
+        return super.getMessage() + pelanggan_error.getNama() + " tidak ditemukan.";
 
     }
 }

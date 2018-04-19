@@ -6,6 +6,6 @@ public class HotelSudahAdaException extends Exception {
         hotel_error=hotel_input;
     }
     public String getPesan(){
-        return super.getMessage() + hotel_error.getNama() + "sudah terdaftar";
+        return super.getMessage() + hotel_error.getNama() + " sudah terdaftar";
     }
 }

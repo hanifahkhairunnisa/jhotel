@@ -38,7 +38,7 @@ public class DatabaseRoom
             ROOM_DATABASE.add(baru);
             return true;
         } else {
-            throw new RoomSudahAdaException(baru);
+            return false;
         }
     }
     public static Room getRoom(Hotel hotel,String nomor_kamar){
@@ -70,9 +70,8 @@ public class DatabaseRoom
         }
         return toReturn;
     }
-    
-    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
-    {
+
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException{
         for (Room kamar :
                 ROOM_DATABASE) {
             if(kamar.getHotel().equals(hotel)){
@@ -83,7 +82,7 @@ public class DatabaseRoom
                 }
             }
         }
-       return false;
+        throw new RoomTidakDitemukanException(hotel,nomor_kamar);
     }
     
 }

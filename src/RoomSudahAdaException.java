@@ -6,6 +6,6 @@ public class RoomSudahAdaException extends Exception {
         room_input=room_input;
     }
     public String getPesan(){
-        return super.getMessage() + room_error.getNomorKamar() + "pada" + room_error.getHotel() + "sudah terdaftar";
+        return super.getMessage() + room_error.getNomorKamar() + " pada" + room_error.getHotel() + " sudah terdaftar";
     }
 }

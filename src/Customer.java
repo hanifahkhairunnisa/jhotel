@@ -70,7 +70,7 @@ public class Customer
     {
         this.nama = nama;
     }
-    public String setEmail(String email)
+    public void setEmail(String email)
     {
         if (email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
@@ -81,20 +81,27 @@ public class Customer
             System.out.println("Email tidak valid");
         }
 }
-    public Date setDOB (Date dob)
+    public void setDOB (Date dob)
     {
         this.dob = dob;
     }
-    
-    public String toString()
-    {
-        if(DatabasePesanan.getPesananAktif(this)==null){
-            
-        return "\nCustomer"+ "\nNama\t"+ getNama() + "\nid\t" +getID() +"\nE-mail"+getEmail()+"\nDate of birth"+ dobformat.format(getDOB());
-    }
-    else{
-        return "\nCustomer"+ "\nNama\t"+ getNama() + "\nid\t" +getID() +"\nE-mail"+getEmail()+"\nDate of birth"+ dobformat.format(getDOB()) + "\nSedang memroses";
-    }
+
+    public String toString() {
+        if(DatabasePesanan.getPesananAktif(this)==null)
+        {
+            return "ID: " + getID()
+                    + "\tName: " + getNama()
+                    + "\tE-Mail: " + getEmail()
+                    + "\tDoB: " + dobformat.format(getDOB())
+                    + "\tBooking Order is in progress\n";
+        }
+        else
+        {
+            return "ID: " + getID()
+                    + "\tName: " + getNama()
+                    + "\tE-Mail: " + getEmail()
+                    + "\tDoB: " + dobformat.format(getDOB()) + "\n";
+        }
     }
    
 }

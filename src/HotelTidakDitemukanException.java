@@ -6,6 +6,6 @@ public class HotelTidakDitemukanException extends Exception {
         hotel_error=hotel_input;
     }
     public String getPesan(){
-        return super.getMessage() + hotel_error + "tidak ditemukan";
+        return super.getMessage() + hotel_error + " tidak ditemukan";
     }
 }

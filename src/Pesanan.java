@@ -132,6 +132,6 @@ public class Pesanan
         if(isDiproses == true && isSelesai == false) final_status = "DIPROSES";
         else if(isDiproses == false && isSelesai == false) final_status = "KOSONG";
         else if(isDiproses == false && isSelesai == true) final_status = "SELESAI";
-        return "\nPesanan\nNama Pelanggan:\t" +pelanggan.getNama()+ "Jumlah hari\t:" +jumlahHari+ "Biaya\t:"+biaya+"Status layanan\t:" +final_status+"Room\t:"+getRoom();
+        return "\nPesanan\nNama Pelanggan:\t" +pelanggan.getNama()+ "\nJumlah hari\t:" +jumlahHari+ "\nBiaya\t:"+biaya+"\nStatus layanan\t:" +final_status+"\nRoom\t:"+getRoom();
     }
 }

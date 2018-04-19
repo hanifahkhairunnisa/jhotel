@@ -55,22 +55,29 @@ public class DatabaseCustomer
         return null;
     }
     /** method untuk menghapus customer */
-   /* public static boolean removeCustomer(int id)
-    {
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException {
         for (Customer cust :
                 CUSTOMER_DATABASE) {
             if(cust.getID()==id){
                 for (Pesanan pesan :
                         DatabasePesanan.getPesananDatabase()) {
-                    if(pesan.getPelanggan().equals(cust)) DatabasePesanan.removePesanan(pesan);
+                    if(pesan.getPelanggan().equals(cust)) {
+                        try{
+                            DatabasePesanan.removePesanan(pesan);
+                        }
+                        catch(PesananTidakDitemukanException e){
+
+                        }
+                    }
                 }
                 CUSTOMER_DATABASE.remove(cust);
                 return true;
             }
         }
-        return false;
-    }*/
+        throw new PelangganTidakDitemukanException(id);
     }
+
+}
    
     
 

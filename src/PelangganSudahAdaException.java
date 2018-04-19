@@ -6,6 +6,6 @@ public class PelangganSudahAdaException extends Exception {
         this.pelanggan_error=pelanggan_input;
     }
     public String getPesan(){
-    return super.getMessage() + pelanggan_error + "Sudah terdaftar.";
+    return super.getMessage() + pelanggan_error + " sudah terdaftar.";
     }
 }

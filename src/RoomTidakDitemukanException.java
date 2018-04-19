@@ -8,6 +8,6 @@ public class RoomTidakDitemukanException extends Exception{
         room_error = room_input;
     }
     public String getPesan(){
-        return super.getMessage() + hotel_error + "dan dengan nomor kamar" + room_error + "tidak ditemukan.";
+        return super.getMessage() + hotel_error + " dan dengan nomor kamar" + room_error + " tidak ditemukan.";
     }
 }
