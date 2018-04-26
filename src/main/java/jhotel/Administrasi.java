@@ -22,33 +22,37 @@ public class Administrasi
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param    a sample parameter for a method
+     *
      * @return    the sum of x and y
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-        pesan.setStatusDiproses(true);
-        pesan.setStatusSelesai(false);
-        pesan.setRoom(kamar);
-        DatabaseRoom.getRoom(kamar.getHotel(),kamar.getNomorKamar()).setStatusKamar(StatusKamar.BOOKED);
-            
+        if (kamar.getStatusKamar().equals(StatusKamar.VACANT)) {
+            pesan.setStatusDiproses(true);
+            pesan.setStatusSelesai(false);
+            pesan.setRoom(kamar);
+            DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.BOOKED);
+        }
+        else {
+            pesan.setStatusAktif(false);
+        }
     }
     public static void pesananDibatalkan(Room kamar){
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         if(pesan != null){
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
+        //pesan.setRoom(null);
         //roomLepasPesanan(kamar);
     }
     DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
     }
     public static void pesananSelesai(Room kamar){
-    Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+    Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         if(pesan != null) {
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
+       // pesan.setRoom(null);
         DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
     }
     }
@@ -58,7 +62,7 @@ public class Administrasi
       pesan.setStatusSelesai(false);  
       pesan.setStatusDiproses(false);
       pesan.setStatusAktif(false);
-      pesan.setRoom(null);
+     // pesan.setRoom(null);
     }
     public static void pesananSelesai(Pesanan pesan)
     {
@@ -66,7 +70,7 @@ public class Administrasi
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        pesan.setRoom(null); 
+       // pesan.setRoom(null);
     }
     
     

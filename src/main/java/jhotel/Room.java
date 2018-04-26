@@ -21,7 +21,7 @@ public abstract class Room
         // initialise instance variables
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.status_kamar = status_kamar.VACANT;
+        this.status_kamar = StatusKamar.VACANT;
         
     }
 
@@ -71,7 +71,7 @@ public abstract class Room
     
     public String toString()
     {
-            if(DatabasePesanan.getPesanan(this) == null)
+            if(DatabasePesanan.getPesananAktif(this) == null)
         {
             return "\nNama Hotel \t\t:" + getHotel().getNama()
                     + "\nTipe Kamar \t\t:" + getTipeKamar()

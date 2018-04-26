@@ -10,30 +10,33 @@ import java.text.*;
 
 public class Customer
 {
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
     SimpleDateFormat dobformat = new SimpleDateFormat("dd MMMMMMMMM yyyy");
     
     /**
      * Constructor for objects of class Customer
      */
-    public Customer(String nama, int tahun, int bulan, int tanggal, String email)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password)
     {
        //assign instance variables
        this.id = DatabaseCustomer.getLastCustomerID()+1;
        this.id = id;
        this.nama = nama;
        this.email=email;
+       this.password = password;
        this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
     }
-    public Customer(String nama, Date dob, String email)
+    public Customer(String nama, Date dob, String email, String password)
     {
         this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = dob;
         this.email=email;
+        this.password = password;
     }
     
     /**
@@ -63,6 +66,9 @@ public class Customer
         
         return dob;
     }
+    public String getPassword(){
+        return password;
+    }
     
     
     /** method untuk memperbaharui nama */
@@ -84,6 +90,9 @@ public class Customer
     public void setDOB (Date dob)
     {
         this.dob = dob;
+    }
+    public void setPassword(String password){
+
     }
 
     public String toString() {

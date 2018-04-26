@@ -19,6 +19,46 @@ public class JHotel
     public static void main(String [] args)
     {
         SpringApplication.run(JHotel.class, args);
+        try {
+            DatabaseHotel.addHotel(new Hotel("Margo Hotel", new Lokasi(4, 3, "Depok"),4));
+        } catch(HotelSudahAdaException e){
+            System.out.println("---Exception Hotel Sudah Ada---");
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseHotel.addHotel(new Hotel("Bumi Wiyata", new Lokasi(2, 2, "Kota Depok"),5));
+        } catch(HotelSudahAdaException e){
+            System.out.println("---Exception Hotel Sudah Ada---");
+            System.out.println(e.getPesan());
+        }
+
+
+
+        try {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1),"666"));
+
+
+        } catch(RoomSudahAdaException e){
+            System.out.println("---Exception Room Sudah Ada---");
+            System.out.println(e.getPesan());
+        }
+        try {
+
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "999"));
+
+
+        } catch(RoomSudahAdaException e){
+            System.out.println("---Exception Room Sudah Ada---");
+            System.out.println(e.getPesan());
+        }
+        try {
+
+            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(2),"333"));
+
+        } catch(RoomSudahAdaException e){
+            System.out.println("---Exception Room Sudah Ada---");
+            System.out.println(e.getPesan());
+        }
         // put your code here
         /*Customer hani = new Customer(1, "hani");
         Lokasi depok = new Lokasi(7, 5, "mantap");

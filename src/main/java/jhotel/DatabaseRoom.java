@@ -60,6 +60,7 @@ public class DatabaseRoom
         }
         return toReturn;
     }
+
     public static ArrayList<Room> getVacantRooms(){
         ArrayList<Room> toReturn = new ArrayList<>();
         for (Room kamar :

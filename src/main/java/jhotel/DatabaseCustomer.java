@@ -46,6 +46,15 @@ public class DatabaseCustomer
         return true;
     }
 
+    public static Customer getCustomerLogin(String email, String password){
+        for (Customer cust : CUSTOMER_DATABASE) {
+            if (cust.getEmail().equals(email)  && cust.getPassword().equals(password)) {
+                return cust;
+            }
+        }
+        return null;
+
+    }
     public static Customer getCustomer(int id)
     {
         for (Customer cust :
